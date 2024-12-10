@@ -14,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IWordFinderService, WordFinderService>();
 
 builder.Services.AddDbContext<WordFinderContext>(options => options.UseInMemoryDatabase(databaseName: "WordFinderDB"));
+builder.Services.AddDbContext<SequenceContext>(options => options.UseInMemoryDatabase(databaseName: "SequenceDB"));
 builder.Services.AddScoped<DataSeeder>(); //seed the data
 var app = builder.Build();
 
